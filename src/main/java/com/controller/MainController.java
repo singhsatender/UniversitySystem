@@ -197,11 +197,18 @@ public class MainController {
 		}else if(action.equalsIgnoreCase("CREATECOURSE")){
 			result = "courseCreation";
 		}
-		else if(action.equalsIgnoreCase("CREATECOURSE")){
+		else if(action.equalsIgnoreCase("DELETESTUDENT")){
 			result = "deletestudent";
-		}else if(action.equalsIgnoreCase("CREATECOURSE")){
+		}else if(action.equalsIgnoreCase("DESTROYCOURSE")){
 			model.addAttribute("Courses", outputhandler.displayCourses());
 			result = "deletecourse";
+		}
+		else if(action.equalsIgnoreCase("CANCELCOURSE")){
+			model.addAttribute("Courses", outputhandler.displayCourses());
+			result = "cancelcourse";
+		}else if(action.equalsIgnoreCase("CHECKMARKS")){
+			model.addAttribute("Courses", outputhandler.displayMarks("yes"));
+			result = "displaymarks";
 		}
 		return result;
 	 
