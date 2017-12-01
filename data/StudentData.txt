@@ -1,0 +1,4 @@
+1,Batman@carleton.ca,batman,PARTTIME
+2,Superman@carleton.ca,superman,FULLTIME
+3,Ironman@carleton.ca,ironman,FULLTIME
+4,Wonderwomen@carleton.ca,wonderwomen,PARTTIME

@@ -1,0 +1,69 @@
+2017-11-25 12:26:55 INFO  String:39 - Operation:Initialize StudentTable;StudentTable: [[1,Batman@carleton.ca,batman,PARTTIME], [2,Superman@carleton.ca,superman,FULLTIME], [3,Ironman@carleton.ca,ironman,FULLTIME], [4,Wonderwomen@carleton.ca,wonderwomen,PARTTIME]]
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[singhA@carleton.ca,singh];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:64 - Operation:Create New Student;Student Info:[singhA@carleton.ca,singh];State:Fail;Reason:The Student already existed.
+@2017-11-25 12:26:55 INFO  String:37 - Operation:Initialize CourseTable;CourseTable: [server.logic.model.Course@448c8166, server.logic.model.Course@4470fbd6, server.logic.model.Course@15d49048]
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseS,409989];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseS,409989];State:Fail,Reason:Course Already Exists
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderK@carleton.ca,satender];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseR,409988];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:79 - Operation:registerStudentForCourse;Info:[6,409988,2017-11-25 12:26:55];State:Fail;Reason:Student registration yet not started.
+@2017-11-25 12:26:55 INFO  String:79 - Operation:registerStudentForCourse;Info:[6,409988,2017-11-25 12:26:55];State:Fail;Reason:Student registration yet not started.
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderL@carleton.ca,satender];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseP,409987];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[7,409987,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:67 - Operation:registerStudentForCourse;Info:[7,409987,2017-11-25 12:26:55];State:Fail;Reason:Already registered for this course
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderM@carleton.ca,satender];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Mathematics,301345];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:109 - Operation:DeRegisterStudentForCourse;Info:[8,301345,2017-11-25 12:26:55];State:Fail;Reason:Course not registered.
+@2017-11-25 12:26:55 INFO  String:133 - Operation:Destroy Course;Course Info:[601345];Failure,Reason:Course Doesnot exist
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseA,201041];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[studentA@carleton.ca,studentA];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:130 - Operation:Destroy Course;Course Info:[201041,CourseA];State:Course Destroyed successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[studentB@carleton.ca,studentB];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseC,201043];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseB,201042];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:135 - Operation:Delete Student;Student Info:[studentA@carleton.ca,studentA];State:Student deleted Successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[studentA@carleton.ca,shaktiman];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:130 - Operation:Destroy Course;Course Info:[201042,CourseB];State:Course Destroyed successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseA,201041];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[11,201043,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[11,201041,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:104 - Operation:DeRegisterStudentForCourse;Info:[11,201043,2017-11-25 12:26:55];State:Subject dropped as maximum time allocated has been reached(2 weeks)
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[10,201041,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:104 - Operation:DeRegisterStudentForCourse;Info:[10,201041,2017-11-25 12:26:55];State:Subject dropped as maximum time allocated has been reached(2 weeks)
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[khal@carleton.ca,khal];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Sanskrit,401985];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[12,401985,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satender@carleton.ca,satender];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Software Engineering,201345];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderA@carleton.ca,satendera];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:135 - Operation:Delete Student;Student Info:[satenderA@carleton.ca,satendera];State:Student deleted Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseZ,409998];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:130 - Operation:Destroy Course;Course Info:[409998,CourseZ];State:Course Destroyed successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderB@carleton.ca,satenderb];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseY,409997];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[15,409997,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderC@carleton.ca,satenderc];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,CourseX,409996];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[16,409996,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:104 - Operation:DeRegisterStudentForCourse;Info:[16,409996,2017-11-25 12:26:55];State:Subject dropped as maximum time allocated has been reached(2 weeks)
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderD@carleton.ca,satenderd];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Physics,409995];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[17,409995,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:104 - Operation:DeRegisterStudentForCourse;Info:[17,409995,2017-11-25 12:26:55];State:Subject dropped as maximum time allocated has been reached(2 weeks)
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderE@carleton.ca,satendere];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Game Animation,209999];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:63 - Operation:registerStudentForCourse;Info:[18,209999,2017-11-25 12:26:55];State:Student registered Successfully
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[ankur@carleton.ca,ankur];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,Software,201555];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[satenderF@carleton.ca,satenderf];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseW,409994];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[ankurG@carleton.ca,ankurg];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseV,409993];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[ankurH@carleton.ca,ankur];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseY,409992];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[ankurI@carleton.ca,ankur];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,courseU,409991];State:Course Creation Successful
+@2017-11-25 12:26:55 INFO  String:61 - Operation:Create New Student;Student Info:[ankurJ@carleton.ca,ankur];State:Student created Successfully
+@2017-11-25 12:26:55 INFO  String:58 - Operation:Create New Course;Course Info:[false,1,2,true,25,coourseT,409990];State:Course Creation Successful
+@
