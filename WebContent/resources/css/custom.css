@@ -1,0 +1,19 @@
+/** Your theme modifications here **/
+
+.flip {
+	align-content: center;
+	padding-top: 50px;
+	padding-left: 20px;
+	padding-bottom:100px;
+	word-wrap: break-word;
+	background-image: url('../img/music_background.jpg');
+}
+
+.registrationFailure {
+	align-content: center;
+	color: red;
+}
+
+.captcha {
+ color: red;
+}
