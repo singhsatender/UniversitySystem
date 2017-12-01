@@ -11,7 +11,7 @@
 <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
 <meta name="keywords" content="">
 
-<title>uOttawa</title>
+<title>Musify.com</title>
 
 <meta name="keywords" content="">
 
@@ -58,10 +58,10 @@
 
 				<a class="navbar-brand home" href="/home"
 					data-animate-hover="bounce"> <img
-					src="<c:url value="/resources/img/uottawa-logo.png"/>"
-					alt="uOttawa" class="hidden-xs"> <img
-					src="<c:url value="/resources/img/uottawa-logo-small.png"/>"
-					alt="uOttawa" class="visible-xs"><span class="sr-only">go
+					src="<c:url value="/resources/img/Musify-logo.png"/>"
+					alt="CD Store logo" class="hidden-xs"> <img
+					src="<c:url value="/resources/img/Musify-logo-small.png"/>"
+					alt="CD Storelogo" class="visible-xs"><span class="sr-only">go
 						to homepage</span>
 				</a>
 			</div>
@@ -70,12 +70,21 @@
 			<div class="navbar-collapse collapse" id="navigation">
 
 				<ul class="nav navbar-nav navbar-left">
-					<li class="active"><a href="/home">University Registration System</a>
+					<li class="active"><a href="/home">Home</a>
 					</li>
 				</ul>
 
 			</div>
 			<!--/.nav-collapse -->
+
+			<div class="navbar-buttons">
+
+				<div class="navbar-collapse collapse right" id="basket-overview">
+					<a href="/logout" class="btn btn-primary navbar-btn"><i
+						class="fa fa-shopping-cart"></i><span class="hidden-sm">logout</span></a>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
 
 		</div>
 		<!-- /.container -->
@@ -91,37 +100,42 @@
 
 				<div class="col-md-12">
 
-					<ul class="breadcrumb">
-						<li><a href="/home">Home</a></li>
-					</ul>
+					<div class="breadcrumb">
+						Hello clerk
+					</div>
 
 				</div>
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>Login</h1>
+						<h1>Clerk Menu</h1>
 
-						<div class="registrationFailure">${error}</div>
+						<div class="registrationFailure">${message} </div>
 						<hr>
 
-						<form action="login" method="POST" name="login" ><!-- onsubmit="return loginCheck();" -->
+						<form action="adminMenu" method="POST"  name="studentCreation" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
-								<label for="email">Email</label> <input type="text"
-									class="form-control" id="email" name="email" />
+								<label for="adminAction">Select Action</label>
+								<select class="form-control" id="adminAction" name="adminAction">
+								  <option value="CREATESTUDENT">CREATE STUDENT</option>
+								  <option value="CREATECOURSE">CREATE COURSE</option>
+								  <option value="DELETESTUDENT">DELETE STUDENT</option>
+								  <option value="DESTROYCOURSE">DESTROY COURSE</option>
+								  <option value="CANCELCOURSE">CANCEL COURSE</option>
+								   <option value="CHECKMARKS">CHECK STUDENTS ABOVE 85% MARKS</option>
+								  
+								</select>  
 							</div>
-							<div class="form-group">
-								<label for="password">Password</label> <input type="password"
-									class="form-control" id="password" name="password" />
-							</div>
-    						<br>
-							<div class="text-center">								
+							
+							<div class="text-center">
 								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-sign-in"></i> Log in
+									<i class="fa fa-user-md"></i> Perform
 								</button>
 							</div>
 						</form>
 					</div>
 				</div>
+
 
 
 			</div>

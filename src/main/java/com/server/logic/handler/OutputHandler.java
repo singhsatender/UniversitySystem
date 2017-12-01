@@ -42,7 +42,7 @@ public class OutputHandler {
         }else{
         	result=StudentTable.getInstance().createStudent(strArray[0], strArray[1],strArray[2]);
         	if(result.equals(true)){
-        		output.setOutput("Success!");
+        		output.setOutput("Success");
         	}else{
         		output.setOutput("The User Already Exists!");
         	}

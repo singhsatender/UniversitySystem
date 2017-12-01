@@ -86,28 +86,87 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String loginUser(ModelMap model, HttpServletRequest request) {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+	public String loginUser(ModelMap model,@RequestParam("email") String email, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
 		String result = "";
-		System.out.println("in Login User");
+		// Creating a session and adding map to it.
+		HttpSession session = request.getSession();
+		logger.info("Adding the login in the session");				
 
 		if (email.equalsIgnoreCase("admin")) {
 			if( outputhandler.clerkLogin(password).getOutput().equalsIgnoreCase("success")){
-				result= "admin";
+				result= "adminMenu";
+				session.setAttribute("user", "admin");
 			}else{
 				model.addAttribute("error",  outputhandler.clerkLogin(password).getOutput());
-				result= "login";
+				result= "index";
 			}
 		} else { 
-			if( outputhandler.studentLogin(email+password).getOutput().equalsIgnoreCase("success")){
-				result= "clerk";
+			if( outputhandler.studentLogin(email+","+password).getOutput().equalsIgnoreCase("success")){
+				result= "studentMenu";
+				session.setAttribute("user", email);
+				model.addAttribute("userEmail",email);
+				model.addAttribute("error",  outputhandler.clerkLogin(password).getOutput());
+
 			}else{
-				model.addAttribute("error", outputhandler.studentLogin(email+password).getOutput());
-				result= "login";
+				model.addAttribute("error", outputhandler.studentLogin(email+","+password).getOutput());
+				result= "index";
 			}
 		}
 		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/studentCreation", method = RequestMethod.POST)
+	public String studentCreation(ModelMap model,@RequestParam("email") String email, @RequestParam("password") String password,  @RequestParam("status") String status, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+			if( outputhandler.createStudent(email+","+password+","+status).getOutput().equalsIgnoreCase("success")){
+				result= "adminMenu";
+				model.addAttribute("message",  "student creation successfull");
+			}else{
+				model.addAttribute("error",  outputhandler.createStudent(email+","+password+","+status).getOutput());
+				result= "studentCreation";			
+		}
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/adminMenu", method = RequestMethod.POST)
+	public String adminMenu(ModelMap model,@RequestParam("adminAction") String action, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+		if(action.equalsIgnoreCase("CREATESTUDENT")){
+			result = "studentCreation";
+		}else if(action.equalsIgnoreCase("CREATECOURSE")){
+			result = "";
+		}
+		
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/studentMenu", method = RequestMethod.POST)
+	public String studentMenu(ModelMap model,@RequestParam("studentAction") String action, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+		HttpSession session = request.getSession();
+		if(action.equalsIgnoreCase("REGISTERCOURSE")){
+			result = "registerCourse";
+		}else if(action.equalsIgnoreCase("DEREGISTERCOURSE")){
+			result = "deregisterCourse";
+		}else if(action.equalsIgnoreCase("CHECKMARKS")){
+			result = "displayMarks";
+		}
+		
+		model.addAttribute("userEmail",session.getAttribute("user"));
+		return result;
+	 
+	}
+	
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+	    session.invalidate(); 
+		return "index";
 	 
 	}
 	

@@ -110,82 +110,37 @@
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>New account</h1>
+						<h1>Student Creation</h1>
 
-						<div class="registrationFailure">${registrationFailureMessage} </div>
+						<div class="registrationFailure">${error} </div>
 						<hr>
 
-						<form:form action="/registerMe" method="POST" modelAttribute="contact" name="registrationForm" onsubmit="return registerCheck();">
+						<form action="studentCreation" method="POST"  name="studentCreation" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
-								<label for="firstname">First Name</label> <form:input type="text"
-									class="form-control" id="firstname" path="firstname" />
+								<label for="email">Student Email</label> <input type="text"
+									class="form-control" id="email" name="email" />
 							</div>
 							<div class="form-group">
-								<label for="lastname">Last Name</label> <form:input type="text"
-									class="form-control" id="lastname" path="lastname" />
+								<label for="password">Password</label> <input type="password"
+									class="form-control" id="password" name="password" />
 							</div>
 							<div class="form-group">
-								<label for="email">Email</label> <form:input type="text"
-									class="form-control" id="email" path="email" />
+								<label for="status">Status</label>
+								<select class="form-control" id="status" name="status">
+								  <option value="PARTTIME">PARTTIME</option>
+								  <option value="FULLTIME">FULLTIME</option>
+								</select>  
 							</div>
-							<div class="form-group">
-								<label for="password">Password</label> <form:input type="password"
-									class="form-control" id="password" path="password" />
-							</div>
-							<div class="form-group">
-								<label for="billingInfo">Billing Information</label> <form:input type="text"
-									class="form-control" id="billingInfo" path="billingInfo" />
-							</div>
-							
-							<div class="form-group">
-								<label for="shippingInfo">Shipping Information</label> <form:input type="text"
-									class="form-control" id="shippingInfo" path="shippingInfo" />
-							</div>
-							<div class="form-group">
-							     <img src="jcaptcha.jpg" /> <input type="text" name="jcaptcha" value="" />
-							</div>	
 							
 							<div class="text-center">
 								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-user-md"></i> Register
+									<i class="fa fa-user-md"></i> Create
 								</button>
 							</div>
-						</form:form>
+						</form>
 					</div>
 				</div>
 
-				<div class="col-md-6">
-					<div class="box">
-						<h1>Login</h1>
-
-						<div class="registrationFailure">${loginFailureMessage} </div>
-						<hr>
-
-						<form:form action="/login" method="POST" modelAttribute="loginContact" name="loginForm" onsubmit="return loginCheck();">
-							<div class="form-group">
-								<label for="email">Email</label> <form:input type="text"
-									class="form-control" id="email" path="email" />
-							</div>
-							<div class="form-group">
-								<label for="password">Password</label> <form:input type="password"
-									class="form-control" id="password" path="password" />
-							</div>
-							<div class="form-group">	
-							   <label for="captchaCode" class="prompt">
-								  Retype the characters from the picture:</label>
-								
-								
-								<form:input id="captchaCode" type="text" name="captchaCode" path="captchaCode" />
-							</div>	
-    						<br>
-							<div class="text-center">								
-								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-sign-in"></i> Log in
-								</button>
-							</div>
-						</form:form>
-					</div>
-				</div>
 
 
 			</div>
