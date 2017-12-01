@@ -192,7 +192,7 @@ public class OutputHandler {
         }else{
         		result=CourseTable.getInstance().cancelCourse(Integer.parseInt(strArray[0]));
             	if(result.equals("success")){
-            		output.setOutput("Success!");
+            		output.setOutput("Success");
             	}else{
             		output.setOutput(result+"!");
             	}

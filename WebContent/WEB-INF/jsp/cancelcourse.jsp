@@ -108,19 +108,20 @@
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>Student Deletion</h1>
+						<h1>Course Cancellation</h1>
 
 						<div class="registrationFailure">${error} </div>
+						<div class="registrationFailure">${Courses} </div>
 						<hr>
 
-						<form action="studentdeletion" method="POST"  name="studentdeletion" ><!-- onsubmit="return registerCheck();" -->
+						<form action="coursedeletion" method="POST"  name="studentdeletion" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
-								<label for="email">Student Email</label> <input type="text"
-									class="form-control" id="email" name="email" />
+								<label for="Coursecode">Course Code</label> <input type="text"
+									class="form-control" id="Coursecode" name="Coursecode" />
 							</div>
 														<div class="text-center">
 								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-user-md"></i> Delete
+									<i class="fa fa-user-md"></i> Submit
 								</button>
 							</div>
 						</form>

@@ -158,6 +158,7 @@ public class MainController {
 	 
 	}
 	
+	
 	@RequestMapping(value = "/deletecourse", method = RequestMethod.POST)
 	public String deletecourse(ModelMap model,@RequestParam("Coursecode") String Coursecode, HttpServletRequest request, HttpServletResponse response) {
 		String result = "";
@@ -165,9 +166,24 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "Course Deleted successfully");
 			}else{
-				model.addAttribute("error",  outputhandler.deleteStudent(Coursecode).getOutput());
+				model.addAttribute("error",  outputhandler.destroyACourse(Coursecode).getOutput());
 				model.addAttribute("Courses", outputhandler.displayCourses());
 				result= "deletecourse";			
+		}
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/cancelcourse", method = RequestMethod.POST)
+	public String cancelcourse(ModelMap model,@RequestParam("Coursecode") String Coursecode, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+			if( outputhandler.cancelACourse(Coursecode).getOutput().equalsIgnoreCase("success")){
+				result= "adminMenu";
+				model.addAttribute("message",  "Course Deleted successfully");
+			}else{
+				model.addAttribute("error",  outputhandler.cancelACourse(Coursecode).getOutput());
+				model.addAttribute("Courses", outputhandler.displayCourses());
+				result= "cancelcourse";			
 		}
 		return result;
 	 
