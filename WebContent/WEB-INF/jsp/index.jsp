@@ -70,7 +70,7 @@
 			<div class="navbar-collapse collapse" id="navigation">
 
 				<ul class="nav navbar-nav navbar-left">
-					<li class="active"><a href="/home">University Registration System</a>
+					<li class="active"><a href="#">University Registration System</a>
 					</li>
 				</ul>
 
@@ -92,7 +92,7 @@
 				<div class="col-md-12">
 
 					<ul class="breadcrumb">
-						<li><a href="/home">Home</a></li>
+						<li><a href="#">Home</a></li>
 					</ul>
 
 				</div>

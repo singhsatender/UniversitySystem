@@ -130,13 +130,28 @@ public class MainController {
 	 
 	}
 	
+	@RequestMapping(value = "/courseCreation", method = RequestMethod.POST)
+	public String courseCreation(ModelMap model,@RequestParam("midterms") String midterms, @RequestParam("assignments") String assignments,  @RequestParam("finalExam") String finalExam, @RequestParam("size") String size, @RequestParam("title") String title, @RequestParam("classCode") String classCode, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+			if( outputhandler.createCourse("false,"+midterms+","+assignments+","+finalExam+","+size+","+title+","+classCode).getOutput().equalsIgnoreCase("success")){
+				result= "adminMenu";
+				model.addAttribute("message",  "course creation successfull");
+			}else{
+				model.addAttribute("error",  outputhandler.createCourse("false,"+midterms+","+assignments+","+finalExam+","+size+","+title+","+classCode).getOutput());
+				result= "courseCreation";			
+		}
+		return result;
+	 
+	}
+	
+	
 	@RequestMapping(value = "/adminMenu", method = RequestMethod.POST)
 	public String adminMenu(ModelMap model,@RequestParam("adminAction") String action, HttpServletRequest request, HttpServletResponse response) {
 		String result = "";
 		if(action.equalsIgnoreCase("CREATESTUDENT")){
 			result = "studentCreation";
 		}else if(action.equalsIgnoreCase("CREATECOURSE")){
-			result = "";
+			result = "courseCreation";
 		}
 		
 		return result;

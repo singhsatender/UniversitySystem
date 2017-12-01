@@ -92,7 +92,7 @@ public class OutputHandler {
         	result=CourseTable.getInstance().createCourse(Boolean.parseBoolean(strArray[0]),Integer.parseInt(strArray[1]),Integer.parseInt(strArray[2]),Boolean.parseBoolean(strArray[3]),
                     Integer.parseInt(strArray[4]),strArray[5],Integer.parseInt(strArray[6]));
         	if(result.equals(true)){
-        		output.setOutput("Success!");
+        		output.setOutput("Success");
         	}else{
         		output.setOutput("The Course Already Exists!");
         	}

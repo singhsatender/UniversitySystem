@@ -108,28 +108,40 @@
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>Student Creation</h1>
-
+						<h1>Course Creation</h1>
+	
 						<div class="registrationFailure">${error} </div>
 						<hr>
 
-						<form action="studentCreation" method="POST"  name="studentCreation" ><!-- onsubmit="return registerCheck();" -->
+						<form action="courseCreation" method="POST"  name="courseCreation" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
-								<label for="email">Student Email</label> <input type="text"
-									class="form-control" id="email" name="email" />
+								<label for="midterms">Number of Midterms</label> <input type="text"
+									class="form-control" id="midterms" name="midterms" />
 							</div>
 							<div class="form-group">
-								<label for="password">Password</label> <input type="password"
-									class="form-control" id="password" name="password" />
+								<label for="assignments">Number of Assignments</label> <input type="text"
+									class="form-control" id="assignments" name="assignments" />
 							</div>
 							<div class="form-group">
-								<label for="status">Status</label>
-								<select class="form-control" id="status" name="status">
-								  <option value="PARTTIME">PARTTIME</option>
-								  <option value="FULLTIME">FULLTIME</option>
+								<label for="finalExam">Final Required</label>
+								<select class="form-control" id="finalExam" name="finalExam">
+								  <option value="YES">YES</option>
+								  <option value="NO">NO</option>
 								</select>  
 							</div>
-							
+							<div class="form-group">
+								<label for="size">Max Class Size</label> <input type="text"
+									class="form-control" id="size" name="size" />
+							</div>
+							<div class="form-group">
+								<label for="title">Title</label> <input type="text"
+									class="form-control" id="title" name="title" />
+							</div>
+							<div class="form-group">
+								<label for="classCode">Class Code</label> <input type="text"
+									class="form-control" id="classCode" name="classCode" />
+							</div>
+		
 							<div class="text-center">
 								<button type="submit" class="btn btn-primary">
 									<i class="fa fa-user-md"></i> Create

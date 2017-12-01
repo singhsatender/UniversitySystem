@@ -11,7 +11,7 @@
 <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
 <meta name="keywords" content="">
 
-<title>Musify.com</title>
+<title>uOttawa</title>
 
 <meta name="keywords" content="">
 
@@ -58,10 +58,10 @@
 
 				<a class="navbar-brand home" href="/home"
 					data-animate-hover="bounce"> <img
-					src="<c:url value="/resources/img/Musify-logo.png"/>"
-					alt="CD Store logo" class="hidden-xs"> <img
-					src="<c:url value="/resources/img/Musify-logo-small.png"/>"
-					alt="CD Storelogo" class="visible-xs"><span class="sr-only">go
+					src="<c:url value="/resources/img/uottawa-logo.png"/>"
+					alt="uOttawa" class="hidden-xs"> <img
+					src="<c:url value="/resources/img/uottawa-logo-small.png"/>"
+					alt="uOttawa" class="visible-xs"><span class="sr-only">go
 						to homepage</span>
 				</a>
 			</div>
@@ -70,7 +70,7 @@
 			<div class="navbar-collapse collapse" id="navigation">
 
 				<ul class="nav navbar-nav navbar-left">
-					<li class="active"><a href="/home">Home</a>
+					<li class="active"><a href="#">University Registration System</a>
 					</li>
 				</ul>
 
