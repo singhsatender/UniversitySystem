@@ -1,6 +1,6 @@
 package com.controller;
 
-import java.io.IOException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -144,6 +144,34 @@ public class MainController {
 	 
 	}
 	
+	@RequestMapping(value = "/deletestudent", method = RequestMethod.POST)
+	public String deleteStudent(ModelMap model,@RequestParam("email") String email, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+			if( outputhandler.deleteStudent(email).getOutput().equalsIgnoreCase("success")){
+				result= "adminMenu";
+				model.addAttribute("message",  "Student deleted successfully");
+			}else{
+				model.addAttribute("error",  outputhandler.deleteStudent(email).getOutput());
+				result= "deletestudent";			
+		}
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/deletecourse", method = RequestMethod.POST)
+	public String deletecourse(ModelMap model,@RequestParam("Coursecode") String Coursecode, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+			if( outputhandler.destroyACourse(Coursecode).getOutput().equalsIgnoreCase("success")){
+				result= "adminMenu";
+				model.addAttribute("message",  "Course Deleted successfully");
+			}else{
+				model.addAttribute("error",  outputhandler.deleteStudent(Coursecode).getOutput());
+				model.addAttribute("Courses", outputhandler.displayCourses());
+				result= "deletecourse";			
+		}
+		return result;
+	 
+	}
 	
 	@RequestMapping(value = "/adminMenu", method = RequestMethod.POST)
 	public String adminMenu(ModelMap model,@RequestParam("adminAction") String action, HttpServletRequest request, HttpServletResponse response) {
@@ -153,7 +181,12 @@ public class MainController {
 		}else if(action.equalsIgnoreCase("CREATECOURSE")){
 			result = "courseCreation";
 		}
-		
+		else if(action.equalsIgnoreCase("CREATECOURSE")){
+			result = "deletestudent";
+		}else if(action.equalsIgnoreCase("CREATECOURSE")){
+			model.addAttribute("Courses", outputhandler.displayCourses());
+			result = "deletecourse";
+		}
 		return result;
 	 
 	}

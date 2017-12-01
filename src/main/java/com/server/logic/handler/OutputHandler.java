@@ -123,7 +123,7 @@ public class OutputHandler {
         }else{
         	result=StudentTable.getInstance().deleteStudent(studentId);
         	if(result.equals("success")){
-        		output.setOutput("Success!");
+        		output.setOutput("Success");
         	}else{
         		output.setOutput(result+"!");
         	}
@@ -144,7 +144,7 @@ public class OutputHandler {
         }else{
         	result=CourseTable.getInstance().destroyCourse(Integer.parseInt(strArray[0]));
         	if(result.equals("success")){
-        		output.setOutput("Success!");
+        		output.setOutput("Success");
         	}else{
         		output.setOutput(result+"!");
         	}
