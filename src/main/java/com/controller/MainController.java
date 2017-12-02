@@ -1,10 +1,11 @@
 package com.controller;
 
-
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,14 +63,7 @@ public class MainController {
 		logger.info("Application started. Loading home page.");
 		
 		// Code to fetch all the students and courses from file system and start the timers
-		//Initialize the tables
-		StudentTable.getInstance();
-		CourseTable.getInstance();
-		UniversityTable.getInstance();
-		TimeSchedule timer= new TimeSchedule();
-		timer.setClerkTimer();
-		timer.setStudentTimer();
-		timer.setTermEndTimer();
+		
 
 		// Code to fetch categories from Product Catalog Web Service
 		//List<String> categoryList = productManagement.getCategoryList();
@@ -83,6 +77,20 @@ public class MainController {
 		//model.addAttribute("cdList", cdList);
 
 		return "index";
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("startup called");
+	     //startup logic here
+		//Initialize the tables
+				StudentTable.getInstance();
+				CourseTable.getInstance();
+				UniversityTable.getInstance();
+				TimeSchedule timer= new TimeSchedule();
+				timer.setClerkTimer();
+				timer.setStudentTimer();
+				timer.setTermEndTimer();		
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -126,6 +134,46 @@ public class MainController {
 				model.addAttribute("error",  outputhandler.createStudent(email+","+password+","+status).getOutput());
 				result= "studentCreation";			
 		}
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/studentRegistration", method = RequestMethod.POST)
+	public String studentRegistration(ModelMap model,@RequestParam("course") String course, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+		String[] strArray = null;   
+        strArray = course.split("\\(");
+        System.out.println("value"+strArray[0]);
+		HttpSession session = request.getSession();
+		String user = (String) session.getAttribute("user");
+			if( outputhandler.register(user+","+strArray[0]).getOutput().equalsIgnoreCase("success")){
+				result= "studentMenu";
+				model.addAttribute("message",  "student registration successfull");
+			}else{
+				model.addAttribute("message",  outputhandler.register(user+","+strArray[0]).getOutput());
+				result= "studentMenu";			
+		}
+		model.addAttribute("userEmail",session.getAttribute("user"));
+		return result;
+	 
+	}
+	
+	@RequestMapping(value = "/studentDeRegistration", method = RequestMethod.POST)
+	public String studentDeRegistration(ModelMap model,@RequestParam("course") String course, HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+		String[] strArray = null;   
+        strArray = course.split("\\(");
+        System.out.println("value"+strArray[0]);
+		HttpSession session = request.getSession();
+		String user = (String) session.getAttribute("user");
+			if( outputhandler.deRegister(user+","+strArray[0]).getOutput().equalsIgnoreCase("success")){
+				result= "studentMenu";
+				model.addAttribute("message",  "student registration successfull");
+			}else{
+				model.addAttribute("message",  outputhandler.deRegister(user+","+strArray[0]).getOutput());
+				result= "studentMenu";			
+		}
+		model.addAttribute("userEmail",session.getAttribute("user"));
 		return result;
 	 
 	}
@@ -219,9 +267,16 @@ public class MainController {
 		String result = "";
 		HttpSession session = request.getSession();
 		if(action.equalsIgnoreCase("REGISTERCOURSE")){
-			result = "registerCourse";
+			result = "studentRegistration";	  
+			model.addAttribute("Courses", outputhandler.displaySubjects());
 		}else if(action.equalsIgnoreCase("DEREGISTERCOURSE")){
-			result = "deregisterCourse";
+			if(StudentTable.getInstance().checkStudentCourses(""+session.getAttribute("user")) !=-1){
+			result = "studentDeRegistration";
+			model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
+			}else{
+				result = "studentMenu";
+				model.addAttribute("message", "no course registered yet");
+			}
 		}else if(action.equalsIgnoreCase("CHECKMARKS")){
 			result = "displayMarks";
 		}

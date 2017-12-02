@@ -1,5 +1,6 @@
 package com.server.logic.handler;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.server.logic.handler.model.Output;
@@ -158,7 +159,15 @@ public class OutputHandler {
 		
 		String result;
 		return result=CourseTable.getInstance().courseList();
-	}
+			}
+			
+		//Description: returns all available course
+    	public ArrayList<String> displaySubjects() {
+		
+		ArrayList<String> result = null;
+		return result=CourseTable.getInstance().subjectList();
+		}
+	
 	
 	//Description: returns all students with 85% or more marks
 	public Output displayMarks(String input) {
@@ -219,7 +228,7 @@ public class OutputHandler {
         }else{
         	   result=UniversityTable.getInstance().registerStudentForCourse(studentId, strArray[1], new Date());
         		if(result.equals("success")){
-            		output.setOutput("Success!");
+            		output.setOutput("Success");
             		output.setState(STUDENT);
             	}else{
             		output.setOutput(result+" !");

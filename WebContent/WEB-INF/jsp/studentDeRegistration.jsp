@@ -108,20 +108,25 @@
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>Course Deletion</h1>
+						<h1>Student DeRegistration</h1>
 
 						<div class="registrationFailure">${error} </div>
-						<div class="registrationFailure">${Courses} </div>
 						<hr>
 
-						<form action="deletecourse" method="POST"  name="deletecourse" ><!-- onsubmit="return registerCheck();" -->
+						<form action="studentDeRegistration" method="POST"  name="studentDeRegistration" ><!-- onsubmit="return registerCheck();" -->
+							
 							<div class="form-group">
-								<label for="Coursecode">Course Code</label> <input type="text"
-									class="form-control" id="Coursecode" name="Coursecode" />
+								<label for="course">Select Course</label>
+								<select class="form-control" id="course" name="course">
+								<c:forEach var="subject" items="${Courses}">
+								  <option value="${subject}">${subject}</option>
+							    </c:forEach>
+								</select>  
 							</div>
-														<div class="text-center">
+							
+							<div class="text-center">
 								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-user-md"></i> Delete
+									<i class="fa fa-user-md"></i> DeRegister
 								</button>
 							</div>
 						</form>

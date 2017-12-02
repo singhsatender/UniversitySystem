@@ -113,7 +113,7 @@
 						<div class="registrationFailure">${error} </div>
 						<hr>
 
-						<form action="studentdeletion" method="POST"  name="studentdeletion" ><!-- onsubmit="return registerCheck();" -->
+						<form action="deletestudent" method="POST"  name="deletestudent" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
 								<label for="email">Student Email</label> <input type="text"
 									class="form-control" id="email" name="email" />

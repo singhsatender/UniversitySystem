@@ -114,7 +114,7 @@
 						<div class="registrationFailure">${Courses} </div>
 						<hr>
 
-						<form action="coursedeletion" method="POST"  name="studentdeletion" ><!-- onsubmit="return registerCheck();" -->
+						<form action="cancelcourse" method="POST"  name="cancelcourse" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
 								<label for="Coursecode">Course Code</label> <input type="text"
 									class="form-control" id="Coursecode" name="Coursecode" />
