@@ -207,15 +207,19 @@ public class StudentTable {
 		}
 		
 		//Description: check student Marks 
-	    public int checkStudentMarks(String string) {
-			int result=-1;
+	    public List<String> checkStudentMarks(String string) {
+			List<String> result= new ArrayList<String>();
 			for(int i=0;i<studentList.size();i++){
 				if(studentList.get(i).getStudentname().equalsIgnoreCase(string)){
-					result = studentList.get(i).getMarks();
+					for(Course course : studentList.get(i).Courses){
+						result.add("Course : "+course.getMyCode()+", Marks ="+studentList.get(i).getMarks());						
+					}
+					break;
 				}else{
-					result =-1;
+					result =null;
 				}
 			}
+			
 			return result;
 		}
 	    
@@ -225,8 +229,25 @@ public class StudentTable {
 			for(int i=0;i<studentList.size();i++){
 				if(studentList.get(i).getStudentname().equalsIgnoreCase(string)){
 					result = studentList.get(i).Courses.size();
+					break;
 				}else{
 					result = -1;
+				}
+			}
+			return result;
+		}
+	    
+	    //Description: check student Courses 
+	    public List<String> registeredCourses(String string) {
+			List<String> result= new ArrayList<String>();
+			for(int i=0;i<studentList.size();i++){
+				if(studentList.get(i).getStudentname().equalsIgnoreCase(string)){
+					for(Course course : studentList.get(i).Courses){
+						result.add(course.getMyCode()+"("+course.getTitle()+")");						
+					}
+					break;
+				}else{
+					result =null;
 				}
 			}
 			return result;

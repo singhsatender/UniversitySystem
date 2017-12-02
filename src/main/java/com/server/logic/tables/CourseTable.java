@@ -216,6 +216,17 @@ public class CourseTable {
 		return courses;
 	}
 	
+	//Description: returns all list of courses available
+		public ArrayList<String> subjectList(){
+			List <String> subject = new ArrayList<String>();
+			String courses="";
+			for(int i=0;i<courseList.size();i++){
+				subject.add((courseList.get(i)).getMyCode()+"( "+(courseList.get(i)).getTitle()+" )");			
+			}
+			return (ArrayList<String>) subject;
+		}
+		
+	
 	//Description: check student in course's student list
 		public boolean checkStudentInCourse(Student student,int course){
 			for(int i=0;i<courseList.size();i++){
