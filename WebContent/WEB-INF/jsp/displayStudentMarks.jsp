@@ -108,28 +108,19 @@
 
 				<div class="col-md-6">
 					<div class="box">
-						<h1>Student Registration</h1>
+						<h1>Student Marks</h1>
 
 						<div class="registrationFailure">${error} </div>
 						<hr>
-
-						<form action="studentRegistration" method="POST"  name="studentRegistration" ><!-- onsubmit="return registerCheck();" -->
-							
-							<div class="form-group">
-								<label for="course">Select Course</label>
-								<select class="form-control" id="course" name="course">
-								<c:forEach var="subject" items="${Courses}">
-								  <option value="${subject}">${subject}</option>
+                            	<div class="form-group">
+								<label for="course">Student Marks</label>
+								<div class="form-control" id="studentmarks">
+								<c:forEach var="marks" items="${Marks}">
+								  <div id="${marks}">${marks}</div>
 							    </c:forEach>
-								</select>  
+								</div>  
 							</div>
 							
-							<div class="text-center">
-								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-user-md"></i> Register
-								</button>
-							</div>
-						</form>
 					</div>
 				</div>
 

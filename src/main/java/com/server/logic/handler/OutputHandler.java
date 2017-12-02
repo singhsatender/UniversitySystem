@@ -159,15 +159,14 @@ public class OutputHandler {
 		
 		String result;
 		return result=CourseTable.getInstance().courseList();
-			}
-			
-		//Description: returns all available course
-    	public ArrayList<String> displaySubjects() {
+	}
+	
+	//Description: returns all available course
+	public ArrayList<String> displaySubjects() {
 		
 		ArrayList<String> result = null;
 		return result=CourseTable.getInstance().subjectList();
-		}
-	
+	}
 	
 	//Description: returns all students with 85% or more marks
 	public Output displayMarks(String input) {
@@ -187,6 +186,24 @@ public class OutputHandler {
 		}
      return output;
 	}
+	
+	//Description: returns a student's marks
+		public ArrayList<String> displayStudentMarks(String input) {
+			ArrayList<String> result = new ArrayList<String>();
+			boolean email=input.contains("@");
+			if(email){
+			University univ = new University();
+			if(univ.termEnded){
+				result=(ArrayList<String>) (StudentTable.getInstance().checkStudentMarks(input));
+			}else{
+					result.add("Term not ended yet. Can not display marks before that.");
+					
+				}
+			}else{
+				result.add("Student email wrong. Please try again.");
+			}
+	     return result;
+		}
 	
 	//Description: check conditions and call cancel course method
 	public Output cancelACourse(String input) {
@@ -261,7 +278,7 @@ public class OutputHandler {
         	}else{
         		result=UniversityTable.getInstance().deRegisterCourse(studentId, strArray[1], new Date());
         		
-            		output.setOutput(result+"!");
+            		output.setOutput(result+"");
         	}
         	output.setState(STUDENT);
         }

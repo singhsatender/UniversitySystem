@@ -270,7 +270,8 @@ public class MainController {
 			result = "studentRegistration";	  
 			model.addAttribute("Courses", outputhandler.displaySubjects());
 		}else if(action.equalsIgnoreCase("DEREGISTERCOURSE")){
-			if(StudentTable.getInstance().checkStudentCourses(""+session.getAttribute("user")) !=-1){
+			int coursesRegistered = StudentTable.getInstance().checkStudentCourses(""+session.getAttribute("user"));
+			if(coursesRegistered !=-1 && coursesRegistered !=0){
 			result = "studentDeRegistration";
 			model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
 			}else{
@@ -278,7 +279,8 @@ public class MainController {
 				model.addAttribute("message", "no course registered yet");
 			}
 		}else if(action.equalsIgnoreCase("CHECKMARKS")){
-			result = "displayMarks";
+			model.addAttribute("Marks", outputhandler.displayStudentMarks(""+session.getAttribute("user")));			
+			result = "displayStudentMarks";
 		}
 		
 		model.addAttribute("userEmail",session.getAttribute("user"));
