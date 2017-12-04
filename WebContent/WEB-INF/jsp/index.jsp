@@ -115,7 +115,7 @@
 							</div>
     						<br>
 							<div class="text-center">								
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="login">
 									<i class="fa fa-sign-in"></i> Log in
 								</button>
 							</div>

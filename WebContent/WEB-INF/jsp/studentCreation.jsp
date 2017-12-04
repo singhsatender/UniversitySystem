@@ -116,11 +116,11 @@
 						<form action="studentCreation" method="POST"  name="studentCreation" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
 								<label for="email">Student Email</label> <input type="text"
-									class="form-control" id="email" name="email" />
+									class="form-control" id="studentemail" name="email" />
 							</div>
 							<div class="form-group">
 								<label for="password">Password</label> <input type="password"
-									class="form-control" id="password" name="password" />
+									class="form-control" id="studentpassword" name="password" />
 							</div>
 							<div class="form-group">
 								<label for="status">Status</label>
@@ -131,7 +131,7 @@
 							</div>
 							
 							<div class="text-center">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="createStudent">
 									<i class="fa fa-user-md"></i> Create
 								</button>
 							</div>

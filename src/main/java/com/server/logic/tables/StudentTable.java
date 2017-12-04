@@ -215,8 +215,6 @@ public class StudentTable {
 						result.add("Course : "+course.getMyCode()+", Marks ="+studentList.get(i).getMarks());						
 					}
 					break;
-				}else{
-					result =null;
 				}
 			}
 			

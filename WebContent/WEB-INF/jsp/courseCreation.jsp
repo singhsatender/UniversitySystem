@@ -143,7 +143,7 @@
 							</div>
 		
 							<div class="text-center">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="createCourse">
 									<i class="fa fa-user-md"></i> Create
 								</button>
 							</div>
