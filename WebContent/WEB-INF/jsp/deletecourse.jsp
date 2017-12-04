@@ -120,7 +120,7 @@
 									class="form-control" id="Coursecode" name="Coursecode" />
 							</div>
 														<div class="text-center">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="deleteCourse">
 									<i class="fa fa-user-md"></i> Delete
 								</button>
 							</div>

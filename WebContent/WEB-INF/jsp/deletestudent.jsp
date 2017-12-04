@@ -116,10 +116,10 @@
 						<form action="deletestudent" method="POST"  name="deletestudent" ><!-- onsubmit="return registerCheck();" -->
 							<div class="form-group">
 								<label for="email">Student Email</label> <input type="text"
-									class="form-control" id="email" name="email" />
+									class="form-control" id="deleteStudentEmail" name="email" />
 							</div>
 														<div class="text-center">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary" id="deleteStudent">
 									<i class="fa fa-user-md"></i> Delete
 								</button>
 							</div>

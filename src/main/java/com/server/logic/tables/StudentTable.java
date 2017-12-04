@@ -157,10 +157,8 @@ public class StudentTable {
 		int index=0;
 		for(int i=0;i<studentList.size();i++){
 			if(studentList.get(i).getStudentname().equalsIgnoreCase(string)){
-				flag=flag+1;
+				flag++;
 				index=i;
-			}else{
-				flag=flag+0;
 			}
 		}
 		boolean password=studentList.get(index).getPassword().equalsIgnoreCase(string2);
@@ -174,7 +172,7 @@ public class StudentTable {
 		return result;
 	}
 	
-    //Description: add course to studet's course list
+    //Description: add course to student's course list
 	public String addCourseToStudent(int student,Course course){
 		if(studentList.get(student-1).Courses.contains(course)){
 		   return "Courses already registered";
