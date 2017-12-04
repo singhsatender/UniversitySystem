@@ -149,6 +149,8 @@ public class Test1 {
 		 * driver.findElement(By.id("logout")).click();
 		 * */
 		//Logout complete
+
+		Thread.sleep(5000);
 		
 		//Student Login
 		driver.findElement(By.id("email")).sendKeys("Mudit@gmail.com");	
@@ -204,7 +206,9 @@ public class Test1 {
 		 * driver.findElement(By.id("logout")).click();
 		 * */
 		//Logout complete
-				
+		
+		Thread.sleep(5000);
+		
 		//Clerk Login
 		driver.findElement(By.id("email")).sendKeys("admin");	
 		driver.findElement(By.id("password")).sendKeys("admin");
