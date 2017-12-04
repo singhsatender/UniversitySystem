@@ -20,7 +20,7 @@ public class TimeSchedule {
 	       }
 	  };
 
-	  timer.schedule(task, 40000);//20days
+	  timer.schedule(task, 180000);//20days
 	}
 	  
 	 //Description:Scehdule time for student operations.
@@ -35,7 +35,7 @@ public class TimeSchedule {
 		       }
 		  };
 
-		  timer.schedule(task, 80000);//40days
+		  timer.schedule(task, 300000);//40days
 		}
 	  
 	//Description:Scehdule time to mark term end. Also submit marks once it is fired.
@@ -53,7 +53,7 @@ public class TimeSchedule {
 		       }
 		  };
 
-		  timer.schedule(task, 168000);//84 days
+		  timer.schedule(task, 420000);//84 days
 		}
 
 }

@@ -109,17 +109,13 @@
 				<div class="col-md-6">
 					<div class="box">
 						<h1>Student Marks</h1>
-
-						<div class="registrationFailure">${error} </div>
-						<hr>
-                            	<div class="form-group">
-								<label for="course">Student Marks</label>
-								<div class="form-control" id="studentmarks">
+						<hr>                            	
+								<div  id="studentmarks">
 								<c:forEach var="marks" items="${Marks}">
 								  <div id="${marks}">${marks}</div>
 							    </c:forEach>
 								</div>  
-							</div>
+							
 							
 					</div>
 				</div>
