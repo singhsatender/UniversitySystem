@@ -107,8 +107,6 @@ public class MainController {
 				result= "studentMenu";
 				session.setAttribute("user", email);
 				model.addAttribute("userEmail",email);
-				model.addAttribute("error",  outputhandler.clerkLogin(password).getOutput());
-
 			}else{
 				model.addAttribute("error", outputhandler.studentLogin(email+","+password).getOutput());
 				result= "index";
@@ -266,8 +264,8 @@ public class MainController {
 		}else if(action.equalsIgnoreCase("DEREGISTERCOURSE")){
 			int coursesRegistered = StudentTable.getInstance().checkStudentCourses(""+session.getAttribute("user"));
 			if(coursesRegistered !=-1 && coursesRegistered !=0){
-			result = "studentDeRegistration";
-			model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
+				result = "studentDeRegistration";
+				model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
 			}else{
 				result = "studentMenu";
 				model.addAttribute("message", "no course registered yet");

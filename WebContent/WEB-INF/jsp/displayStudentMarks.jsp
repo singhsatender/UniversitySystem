@@ -80,7 +80,7 @@
 			<div class="navbar-buttons">
 
 				<div class="navbar-collapse collapse right" id="basket-overview">
-					<a href="/logout" class="btn btn-primary navbar-btn"><i
+					<a href="/logout" class="btn btn-primary navbar-btn" id="logout"><i
 						class="fa fa-shopping-cart"></i><span class="hidden-sm">logout</span></a>
 				</div>
 				<!--/.nav-collapse -->

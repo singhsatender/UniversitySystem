@@ -81,7 +81,7 @@ public class Test1 {
 		driver.findElement(By.id("createCourse")).click();
 		//Course Created
 		
-		//Creating Course2
+		//Creating Course3
 		dropdown = new Select(driver.findElement(By.id("adminAction")));
 		dropdown.selectByValue("CREATECOURSE");
 		Thread.sleep(1000);
@@ -93,6 +93,22 @@ public class Test1 {
 		driver.findElement(By.id("size")).sendKeys("25");
 		driver.findElement(By.id("title")).sendKeys("IOT");
 		driver.findElement(By.id("classCode")).sendKeys("201101");
+		Thread.sleep(2000);
+		driver.findElement(By.id("createCourse")).click();
+		//Course Created
+		
+		//Creating Course4
+		dropdown = new Select(driver.findElement(By.id("adminAction")));
+		dropdown.selectByValue("CREATECOURSE");
+		Thread.sleep(1000);
+		driver.findElement(By.id("perform")).click();
+		driver.findElement(By.id("midterms")).sendKeys("2");
+		driver.findElement(By.id("assignments")).sendKeys("0");
+		dropdown = new Select(driver.findElement(By.id("finalExam")));
+		dropdown.selectByValue("YES");
+		driver.findElement(By.id("size")).sendKeys("25");
+		driver.findElement(By.id("title")).sendKeys("ECommerce");
+		driver.findElement(By.id("classCode")).sendKeys("201102");
 		Thread.sleep(2000);
 		driver.findElement(By.id("createCourse")).click();
 		//Course Created
@@ -141,7 +157,77 @@ public class Test1 {
 		driver.findElement(By.id("login")).click();						
 		//login complete
 		
+		//Student Registration
+		dropdown = new Select(driver.findElement(By.id("studentAction")));
+		dropdown.selectByValue("REGISTERCOURSE");
+		Thread.sleep(1000);
+		driver.findElement(By.id("StudentPerform")).click();
+		dropdown = new Select(driver.findElement(By.id("course")));
+		dropdown.selectByIndex(1);
+		Thread.sleep(1000);		
+		driver.findElement(By.id("Register")).click();
+		//Registration complete
 		
+		//Student Registration2
+		dropdown = new Select(driver.findElement(By.id("studentAction")));
+		dropdown.selectByValue("REGISTERCOURSE");
+		Thread.sleep(1000);
+		driver.findElement(By.id("StudentPerform")).click();
+		dropdown = new Select(driver.findElement(By.id("course")));
+		dropdown.selectByIndex(2);
+		Thread.sleep(1000);		
+		driver.findElement(By.id("Register")).click();
+		//Registration complete
+		
+		//Student Deregistration
+		dropdown = new Select(driver.findElement(By.id("studentAction")));
+		dropdown.selectByValue("DEREGISTERCOURSE");
+		Thread.sleep(1000);
+		driver.findElement(By.id("StudentPerform")).click();
+		dropdown = new Select(driver.findElement(By.id("course")));
+		dropdown.selectByIndex(2);
+		Thread.sleep(1000);		
+		driver.findElement(By.id("DeRegister")).click();
+		//Deregistration Successful
+		
+		//Student Checking marks
+		dropdown = new Select(driver.findElement(By.id("studentAction")));
+		dropdown.selectByValue("CHECKMARKS");
+		Thread.sleep(1000);
+		driver.findElement(By.id("StudentPerform")).click();
+		Thread.sleep(5000);
+		//Check Marks complete
+		
+		//Student logout
+		driver.findElement(By.linkText("logout")).click();
+		/*If above doesn't work put below code in place
+		 * driver.findElement(By.id("logout")).click();
+		 * */
+		//Logout complete
+				
+		//Clerk Login
+		driver.findElement(By.id("email")).sendKeys("admin");	
+		driver.findElement(By.id("password")).sendKeys("admin");
+		Thread.sleep(1000);		
+		driver.findElement(By.id("login")).click();						
+		//login complete
+		
+		//Clerk Checking 85% above scored student
+		dropdown = new Select(driver.findElement(By.id("adminAction")));	
+		dropdown.selectByValue("CHECKMARKS");
+		Thread.sleep(1000);
+		driver.findElement(By.id("perform")).click();
+		Thread.sleep(6000);
+		//Complete
+		
+		//Clerk logout
+		driver.findElement(By.linkText("logout")).click();
+		/*If above doesn't work put below code in place
+		 * driver.findElement(By.id("logout")).click();
+		 * */
+		//Logout complete
+		driver.close();		
 	}
+	
 
 }
