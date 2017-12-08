@@ -131,9 +131,12 @@ public class UniversityTable {
 		for(Course course: CourseTable.getInstance().courseList){
 			for(Student student: course.Students){
 				if(student.getMarks()>=85){					
-					result= result + student.getStudentid()+"\t"+student.getMarks()+"\t"+course.getMyCode()+"\n"; 
+					result= result + student.getStudentname() +"\t Marks="+student.getMarks()+"\t"+course.getTitle()+"\n"; 
 				}
 			}
+		}
+		if(result==""){	
+			result = "No Student got marks above 85 %";
 		}
 		return result;
 			

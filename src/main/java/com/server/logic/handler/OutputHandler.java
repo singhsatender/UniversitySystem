@@ -174,7 +174,7 @@ public class OutputHandler {
 		if(input.equalsIgnoreCase("yes")){
 		University univ = new University();
 		if(univ.termEnded){
-			output.setOutput("Result\n Student ID\tMarks\tCourse code\n"+UniversityTable.getInstance().displayMarks());
+			output.setOutput(""+UniversityTable.getInstance().displayMarks());
 			output.setState(CLERK);
 		}else{
 				output.setOutput("Term not ended yet. Can not display marks before that.");
@@ -186,6 +186,18 @@ public class OutputHandler {
 		}
      return output;
 	}
+	
+	//Description: returns all students with 85% or more marks
+		public String displayDeanList() {
+			String output="";			
+			University univ = new University();
+			if(univ.termEnded){
+				output =""+UniversityTable.getInstance().displayMarks();				
+			}else{
+				output ="Term not ended yet. Can not display marks before that.";
+				}			
+	     return output;
+		}
 	
 	//Description: returns a student's marks
 		public ArrayList<String> displayStudentMarks(String input) {

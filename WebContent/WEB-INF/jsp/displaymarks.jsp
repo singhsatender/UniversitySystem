@@ -56,7 +56,7 @@
 		<div class="container">
 			<div class="navbar-header">
 
-				<a class="navbar-brand home" href="/home"
+				<a class="navbar-brand home" href="#"
 					data-animate-hover="bounce"> <img
 					src="<c:url value="/resources/img/uottawa-logo.png"/>"
 					alt="uOttawa" class="hidden-xs"> <img
@@ -80,8 +80,8 @@
 			<div class="navbar-buttons">
 
 				<div class="navbar-collapse collapse right" id="basket-overview">
-					<a href="/logout" class="btn btn-primary navbar-btn" id="logout"><i
-						class="fa fa-shopping-cart"></i><span class="hidden-sm">logout</span></a>
+					<a href="/logout" class="btn btn-primary navbar-btn" id="logout">
+					<span class="hidden-sm">logout</span></a>
 				</div>
 				<!--/.nav-collapse -->
 			</div>
@@ -110,7 +110,7 @@
 					<div class="box">
 						<h1>Marks of Student greater than 85%</h1>
 
-						<div class="registrationFailure">${Courses} </div>
+						<div class="registrationFailure">${Marks} </div>
 						<hr>
 
 					</div>

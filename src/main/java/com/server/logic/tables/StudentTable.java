@@ -172,7 +172,7 @@ public class StudentTable {
 		return result;
 	}
 	
-    //Description: add course to student's course list
+    //Description: add course to studet's course list
 	public String addCourseToStudent(int student,Course course){
 		if(studentList.get(student-1).Courses.contains(course)){
 		   return "Courses already registered";
@@ -242,8 +242,6 @@ public class StudentTable {
 						result.add(course.getMyCode()+"("+course.getTitle()+")");						
 					}
 					break;
-				}else{
-					result =null;
 				}
 			}
 			return result;

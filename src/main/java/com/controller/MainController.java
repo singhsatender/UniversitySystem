@@ -158,11 +158,12 @@ public class MainController {
         System.out.println("value"+strArray[0]);
 		HttpSession session = request.getSession();
 		String user = (String) session.getAttribute("user");
-			if( outputhandler.deRegister(user+","+strArray[0]).getOutput().equalsIgnoreCase("success")){
+		String output =outputhandler.deRegister(user+","+strArray[0]).getOutput();
+			if( output.equalsIgnoreCase("Course deregistred")){
 				result= "studentMenu";
-				model.addAttribute("message",  "student registration successfull");
+				model.addAttribute("message",  "student De-Registration successfull");
 			}else{
-				model.addAttribute("message",  outputhandler.deRegister(user+","+strArray[0]).getOutput());
+				model.addAttribute("message",  output);
 				result= "studentMenu";			
 		}
 		model.addAttribute("userEmail",session.getAttribute("user"));
@@ -247,7 +248,7 @@ public class MainController {
 			model.addAttribute("Courses", outputhandler.displayCourses());
 			result = "cancelcourse";
 		}else if(action.equalsIgnoreCase("CHECKMARKS")){
-			model.addAttribute("Courses", outputhandler.displayMarks("yes"));
+			model.addAttribute("Marks", outputhandler.displayDeanList());
 			result = "displaymarks";
 		}
 		return result;
@@ -264,8 +265,8 @@ public class MainController {
 		}else if(action.equalsIgnoreCase("DEREGISTERCOURSE")){
 			int coursesRegistered = StudentTable.getInstance().checkStudentCourses(""+session.getAttribute("user"));
 			if(coursesRegistered !=-1 && coursesRegistered !=0){
-				result = "studentDeRegistration";
-				model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
+			result = "studentDeRegistration";
+			model.addAttribute("Courses", StudentTable.getInstance().registeredCourses(""+session.getAttribute("user")));
 			}else{
 				result = "studentMenu";
 				model.addAttribute("message", "no course registered yet");

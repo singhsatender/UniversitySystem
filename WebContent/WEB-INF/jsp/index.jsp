@@ -56,7 +56,7 @@
 		<div class="container">
 			<div class="navbar-header">
 
-				<a class="navbar-brand home" href="/home"
+				<a class="navbar-brand home" href="#"
 					data-animate-hover="bounce"> <img
 					src="<c:url value="/resources/img/uottawa-logo.png"/>"
 					alt="uOttawa" class="hidden-xs"> <img
