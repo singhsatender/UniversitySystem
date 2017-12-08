@@ -123,8 +123,8 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "student creation successfull");
 			}else{
-				model.addAttribute("error",  outputhandler.createStudent(email+","+password+","+status).getOutput());
-				result= "studentCreation";			
+				model.addAttribute("message",  outputhandler.createStudent(email+","+password+","+status).getOutput());
+				result= "adminMenu";			
 		}
 		return result;
 	 
@@ -178,8 +178,8 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "course creation successfull");
 			}else{
-				model.addAttribute("error",  outputhandler.createCourse("false,"+midterms+","+assignments+","+finalExam+","+size+","+title+","+classCode).getOutput());
-				result= "courseCreation";			
+				model.addAttribute("message",  outputhandler.createCourse("false,"+midterms+","+assignments+","+finalExam+","+size+","+title+","+classCode).getOutput());
+				result= "adminMenu";			
 		}
 		return result;
 	 
@@ -192,8 +192,8 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "Student deleted successfully");
 			}else{
-				model.addAttribute("error",  outputhandler.deleteStudent(email).getOutput());
-				result= "deletestudent";			
+				model.addAttribute("message",  outputhandler.deleteStudent(email).getOutput());
+				result= "adminMenu";			
 		}
 		return result;
 	 
@@ -207,9 +207,8 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "Course Deleted successfully");
 			}else{
-				model.addAttribute("error",  outputhandler.destroyACourse(Coursecode).getOutput());
-				model.addAttribute("Courses", outputhandler.displayCourses());
-				result= "deletecourse";			
+				model.addAttribute("message",  outputhandler.destroyACourse(Coursecode).getOutput());
+				result= "adminMenu";			
 		}
 		return result;
 	 
@@ -222,9 +221,8 @@ public class MainController {
 				result= "adminMenu";
 				model.addAttribute("message",  "Course Deleted successfully");
 			}else{
-				model.addAttribute("error",  outputhandler.cancelACourse(Coursecode).getOutput());
-				model.addAttribute("Courses", outputhandler.displayCourses());
-				result= "cancelcourse";			
+				model.addAttribute("message",  outputhandler.cancelACourse(Coursecode).getOutput());
+				result= "adminMenu";			
 		}
 		return result;
 	 
